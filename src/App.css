@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: Poppins;
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.navbar-scrolled {
+  background-color: black;
+}
+
+.navbar a.nav-link {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a.nav-link:hover {
+  color: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-links {
+  display: flex;
+  justify-content: center; /* Center the links */
+  align-items: center;
+  width: 100%; /* Ensure the navbar links span the entire width */
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the navbar links */
+}
+
+.navbar-links .nav-link {
+  margin: 0 20px; /* Add equal spacing between each link */
+}
+
+.navbar-links .nav-link:first-child {
+  margin-left: 0; /* Remove margin from the first link */
+}
+
+.navbar-links .nav-link:last-child {
+  margin-right: 0; /* Remove margin from the last link */
+}
+
+/* Home Component */
+
+.home-container {
+  background-image: url("./images/villa.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  text-align: center;
+  color: white;
+  background-color: black;
+  border: 4px solid goldenrod;
+  padding: 20px;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
