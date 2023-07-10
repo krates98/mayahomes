@@ -1,6 +1,6 @@
 import React from "react";
 import Delivered from "../home/Delivered";
-import CompletedProjectsCarousel from "../home/CompletedProjectsCarousel";
+import FeaturedProductsCarousel from "../home/FeaturedProductsCarousel";
 
 function Home() {
   return (
@@ -12,7 +12,7 @@ function Home() {
         </div>
       </div>
       <Delivered />
-      <CompletedProjectsCarousel />
+      <FeaturedProductsCarousel />
     </>
   );
 }
