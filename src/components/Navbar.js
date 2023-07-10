@@ -1,17 +1,12 @@
 import React from "react";
-import logoImage from "../images/maya.png"; // Import the image file
+import logoImage from "../images/maya2.png"; // Import the image file
 
 function Navbar() {
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
   // Function to handle the scroll event
   const handleScroll = () => {
-    const navbar = document.getElementById("navbar");
-    if (navbar) {
-      if (window.scrollY > 0) {
-        navbar.classList.add("navbar-scrolled");
-      } else {
-        navbar.classList.remove("navbar-scrolled");
-      }
-    }
+    setIsScrolled(window.scrollY > 0);
   };
 
   // Attach scroll event listener when component mounts
@@ -22,8 +17,15 @@ function Navbar() {
     };
   }, []);
 
+  const logoSize = isScrolled ? 50 : 150; // Adjust the logo size based on the scroll position
+
   return (
-    <nav id="navbar" className="navbar navbar-expand-lg navbar-dark">
+    <nav
+      id="navbar"
+      className={`navbar navbar-expand-lg navbar-dark ${
+        isScrolled ? "navbar-scrolled" : ""
+      }`}
+    >
       <div className="container">
         <div className="navbar-links">
           <a className="nav-link" href="/">
@@ -34,7 +36,7 @@ function Navbar() {
           </a>
         </div>
         <div className="navbar-logo">
-          <img src={logoImage} height={150} alt="Logo" />
+          <img src={logoImage} height={logoSize} alt="Logo" />
         </div>
         <div className="navbar-links">
           <a className="nav-link" href="/">
