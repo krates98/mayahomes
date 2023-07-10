@@ -1,6 +1,8 @@
 import React from "react";
 import Delivered from "../home/Delivered";
 import FeaturedProductsCarousel from "../home/FeaturedProductsCarousel";
+import AboutMaya from "../home/AboutMaya";
+import CallToAction from "../home/CallToAction";
 
 function Home() {
   return (
@@ -13,6 +15,8 @@ function Home() {
       </div>
       <Delivered />
       <FeaturedProductsCarousel />
+      <AboutMaya />
+      <CallToAction />
     </>
   );
 }

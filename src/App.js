@@ -6,6 +6,7 @@ import About from "./pages/About";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./home/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }

@@ -34,32 +34,30 @@ body {
 
 .navbar-links {
   display: flex;
-  justify-content: center; /* Center the links */
+  justify-content: flex-end;
   align-items: center;
-  width: 100%; /* Ensure the navbar links span the entire width */
-  max-width: 600px; /* Adjust the max-width as needed */
-  margin: 0 auto; /* Center the navbar links */
 }
 
 .navbar-links .nav-link {
-  margin: 0 20px; /* Add equal spacing between each link */
+  margin-left: 20px;
 }
 
-.navbar-links .nav-link:first-child {
-  margin-left: 0; /* Remove margin from the first link */
-}
+@media (max-width: 768px) {
+  .navbar-logo img {
+    height: 50px;
+  }
 
-.navbar-links .nav-link:last-child {
-  margin-right: 0; /* Remove margin from the last link */
+  .navbar-collapse {
+    max-width: 80vw; /* Adjust the max-width as needed */
+  }
 }
 
 /* Home Component */
-
 .home-container {
   background-image: url("./images/villa.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +69,8 @@ body {
   background-color: black;
   border: 4px solid goldenrod;
   padding: 20px;
+  width: 90%;
+  max-width: 600px; /* Adjust the max-width as needed */
 }
 
 .home-content h1 {
@@ -84,6 +84,23 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 480px) {
+  .home-content {
+    width: 90%;
+    padding: 10px;
+    border-width: 2px;
+  }
+
+  .home-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+  }
+}
+
 /* Carousel */
 .featured-products-carousel {
   max-width: 80%;
@@ -92,8 +109,14 @@ body {
 
 .carousel-heading {
   text-align: center;
-  margin-bottom: 20px;
-  color: white;
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #ff8000, #f9bb7e);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .carousel-slide {
@@ -142,4 +165,237 @@ body {
 
 .slick-slide {
   padding: 0 10px; /* Add padding to create gaps */
+}
+
+/* About Maya */
+
+.about-maya {
+  text-align: center;
+  background-color: rgb(28, 28, 28);
+  padding: 20px;
+}
+
+.about-maya-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-maya-heading {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #ff8000, #f9bb7e);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.about-maya-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-maya-description,
+.about-maya-image {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding-right: 20px;
+}
+
+@media (max-width: 480px) {
+  .about-maya-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-maya-description,
+  .about-maya-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .about-maya-image {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.brand-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-maya-description p {
+  margin-bottom: 20px;
+}
+
+.about-maya-description button {
+  background-color: #ffffff;
+  color: rgb(28, 28, 28);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.about-maya-description button:hover {
+  background-color: #cccccc;
+}
+
+/* Queries */
+.call-to-action {
+  background-color: rgb(28, 28, 28);
+  padding: 20px;
+}
+
+.call-to-action-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.call-to-action-heading {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #ff8000, #f9bb7e);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.call-to-action-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.call-to-action-description,
+.call-to-action-form {
+  flex: 1;
+  color: white;
+}
+
+.call-to-action-description {
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .call-to-action-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .call-to-action-description,
+  .call-to-action-form {
+    margin-right: 0;
+  }
+
+  .call-to-action-form input[type="text"],
+  .call-to-action-form input[type="email"],
+  .call-to-action-form input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    box-sizing: border-box;
+  }
+}
+
+.call-to-action-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.call-to-action-form label {
+  margin-bottom: 10px;
+}
+
+.call-to-action-form input,
+.call-to-action-form button {
+  margin-bottom: 10px;
+}
+
+.call-to-action-form input[type="text"],
+.call-to-action-form input[type="email"],
+.call-to-action-form input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.call-to-action-form button {
+  background-color: #ffffff;
+  color: rgb(28, 28, 28);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.call-to-action-form button:hover {
+  background-color: #cccccc;
+}
+
+.submission-message {
+  color: white;
+  margin-top: 10px;
+}
+
+/* Footer */
+
+.footer {
+  background-color: rgb(28, 28, 28);
+  padding: 20px 0;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo h3 {
+  margin: 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer-links ul li {
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
 }
